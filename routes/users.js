@@ -2,8 +2,8 @@ import { v4 as uuiidv4 } from 'uuid';
 import express from 'express';
 const router = express.Router();
 
-// mock database
-const users = [
+// "database"
+    let users = [
     {
         first_name: 'João',
         last_name: 'Grécia',
@@ -16,12 +16,14 @@ const users = [
     },
 ];
 
-// getting the list of users from the mock database
+// getting the list of users from the "database"
 router.get('/', (req, res) => {
     res.send(users);
 })
 
-// adding a user o the mock database
+
+
+// adding a user to the "database"
 router.post('/', (req, res) => {
     const user = req.body;
 
@@ -30,28 +32,40 @@ router.post('/', (req, res) => {
     res.send(`${user.first_name} has been added to the Database`);
 })
 
-// finding users within the mock database by their id value
+
+
+// finding users within the "database" by their id value
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     
     const foundUser = users.find((user) => user.id === id);
-
+    
     res.send(foundUser);
+});
+
+// deleting the user from the "database"
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+  
+    users = users.filter((user) => user.id !== id)
+  
+    res.send(`${id} deleted successfully from database`);
 });
 
 // patching the data of the users, such as first/last name or the email
 router.patch('/:id', (req, res) => {
     const { id } = req.params;
-
+    
     const { first_name, last_name, email } = req.body;
-
+    
     const user = users.find((user) => user.id === id);
-
+    
     if(first_name) user.first_name = first_name;
     if(last_name) user.last_name = last_name;
     if(email) user.email = email;
 
     res.send(`User with the ${id} has been updated`);
 });
+
 
 export default router
