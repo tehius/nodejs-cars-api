@@ -1,5 +1,5 @@
-import { v4 as uuiidv4 } from 'uuid';
-import express from 'express';
+const express = require('express');
+const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 
 // "database"
@@ -21,8 +21,6 @@ router.get('/', (req, res) => {
     res.send(users);
 })
 
-
-
 // adding a user to the "database"
 router.post('/', (req, res) => {
     const user = req.body;
@@ -31,8 +29,6 @@ router.post('/', (req, res) => {
 
     res.send(`${user.first_name} has been added to the Database`);
 })
-
-
 
 // finding users within the "database" by their id value
 router.get('/:id', (req, res) => {
@@ -68,4 +64,4 @@ router.patch('/:id', (req, res) => {
 });
 
 
-export default router
+module.exports = router;
