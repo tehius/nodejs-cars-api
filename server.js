@@ -9,7 +9,7 @@ const app = express();
 async function start() {
     const port = process.env.PORT || 5000;
 
-    await runDbMigrations;
+    await runDbMigrations();
 
     app.listen(port, () => {
         console.log(`Server running on: http://localhost:${port}`);
