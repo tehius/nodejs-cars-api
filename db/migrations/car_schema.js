@@ -1,12 +1,12 @@
-const createCarSchema = `
-    CREATE SCHEMA cars 
+const carSchema = `
+    CREATE SCHEMA IF NOT EXISTS cars
 
-    CREATE TABLE cars.brand (
+    CREATE TABLE IF NOT EXISTS cars.brand (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL
     );
     
-    CREATE TABLE cars.model (
+    CREATE TABLE IF NOT EXISTS cars.model (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         year INT,
@@ -15,4 +15,4 @@ const createCarSchema = `
     );
 `;
 
-module.exports = createCarSchema;
+module.exports = carSchema;

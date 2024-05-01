@@ -2,26 +2,12 @@ const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 
-// "database"
-    let users = [
-    {
-        first_name: 'João',
-        last_name: 'Grécia',
-        email: 'joaogrecia@example.com'
-    },
-    {
-        first_name: 'Manuel',
-        last_name: 'Roma',
-        email: 'manuelroma@example.com'
-    },
-];
-
-// getting the list of users from the "database"
+// getting the list of users from the database
 router.get('/', (req, res) => {
-    res.send(users);
+    res.send();
 })
 
-// adding a user to the "database"
+// adding a user to the database
 router.post('/', (req, res) => {
     const user = req.body;
 
@@ -30,7 +16,7 @@ router.post('/', (req, res) => {
     res.send(`${user.first_name} has been added to the Database`);
 })
 
-// finding users within the "database" by their id value
+// finding users within the database by their id value
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     
@@ -39,7 +25,7 @@ router.get('/:id', (req, res) => {
     res.send(foundUser);
 });
 
-// deleting the user from the "database"
+// deleting the user from the database
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
   

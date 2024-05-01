@@ -1,7 +1,5 @@
 const db = require('../db_pool');
-const createCarSchema = require('./create_car_schema');
-
-let debug = null;
+const carSchema = require('./car_schema');
 
 async function runDbMigrations() {
     console.log('BEGIN DB MIGRATION');
@@ -11,7 +9,7 @@ async function runDbMigrations() {
     try {
         await client.query('BEGIN'); // begin transaction
 
-        debug = await client.query(createCarSchema); // creating car schema
+        await client.query(carSchema); // creating car schema
 
         await client.query('COMMIT'); // commit transaction
 
