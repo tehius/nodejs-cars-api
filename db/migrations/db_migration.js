@@ -2,7 +2,7 @@ const db = require('../db_pool');
 const carSchema = require('./car_schema');
 
 async function runDbMigrations() {
-    console.log('BEGIN DB MIGRATION');
+    console.log('Beginning connection...');
 
     const client = await db.connect();
 
@@ -13,7 +13,7 @@ async function runDbMigrations() {
 
         await client.query('COMMIT'); // commit transaction
 
-        console.log('END DB MIGRATION');
+        console.log('...');
     } catch (e) {
         await client.query('ROLLBACK'); // rollback transaction
 

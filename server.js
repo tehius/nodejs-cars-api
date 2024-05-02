@@ -4,8 +4,6 @@ const bodyParser = require('body-parser');
 const userRoutes = require('./routes/users');
 const runDbMigrations = require('./db/migrations/db_migration');
 
-
-
 const app = express();
 
 async function start() {
@@ -21,7 +19,7 @@ async function start() {
 
     app.use('/db', userRoutes);
 
-    app.get('/', (res) => res.send('HELLO FROM HOMEPAGE'));
+    app.get('/', (req, res) => res.send('HELLO FROM HOMEPAGE'));
 }
 
 start();

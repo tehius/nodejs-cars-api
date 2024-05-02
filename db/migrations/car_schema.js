@@ -1,5 +1,5 @@
 const carSchema = `
-    CREATE SCHEMA IF NOT EXISTS cars
+    CREATE SCHEMA IF NOT EXISTS cars;
 
     CREATE TABLE IF NOT EXISTS cars.brand (
         id SERIAL PRIMARY KEY,
