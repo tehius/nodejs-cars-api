@@ -1,3 +1,5 @@
+const { brandModels, brands } = import('./constants/cars');
+
 function loadYear() {
     let carYear = document.getElementById('year');
     var min = 1995;
@@ -12,15 +14,34 @@ function loadYear() {
 
 function loadBrand() {
     let carBrand = document.getElementById('brand');
-    brands = [ 'Renault', 'Fiat', 'Honda', 
-                'Peugeot', 'Chevrolet', 'Hyundai', 
-                'Volkswagen', 'Nissan', 'Toyota' ];
     brands.forEach(function(brandName) {
         let opt = document.createElement('option');
         opt.value = brandName;
-        opt.text = brandName;
+        opt.innerHTML = brandName;
         carBrand.appendChild(opt)
     });
+}
+
+function loadName() {
+    let carName = document.getElementById('name');
+    let carBrand = document.getElementById('brand').value;
+    // switch (brands) {
+    //     case 'Renault':
+    //         brands.forEach(function(chevrolet) {
+    //             let opt = document.createElement('option');
+    //             opt.value = chevrolet;
+    //             opt.text = chevrolet;
+    //             carName.appendChild(opt);
+    //         });
+    // }
+
+    // brands.forEach(function(modelName) {
+    //     let opt = document.createElement('option');
+    //     opt.value = modelName;
+    //     opt.text = modelName;
+    //     carName.appendChild(opt);
+    // });
+    console.log(carBrand);
 }
 
 function loadFuelType() {
@@ -38,7 +59,7 @@ function loadFuelType() {
 function loadData() {
     loadYear();
     loadBrand();
-    loadFuelType()
+    loadFuelType();
 }
 
 setTimeout(loadData, 1000)
