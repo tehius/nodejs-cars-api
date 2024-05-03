@@ -13,8 +13,8 @@ function loadYear() {
 function loadBrand() {
     let carBrand = document.getElementById('brand');
     brands = [ 'Renault', 'Fiat', 'Honda', 
-                'Peugeot', 'Citroën', 'Hyundai', 
-                'Volkswagen', 'Ford', 'Toyota' ];
+                'Peugeot', 'Chevrolet', 'Hyundai', 
+                'Volkswagen', 'Nissan', 'Toyota' ];
     brands.forEach(function(brandName) {
         let opt = document.createElement('option');
         opt.value = brandName;
