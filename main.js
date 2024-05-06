@@ -1,4 +1,4 @@
-const { brandModels, brands } = import('./constants/cars');
+const { brandModels, brands } = require('./constants/cars');
 
 function loadYear() {
     let carYear = document.getElementById('year');
@@ -25,22 +25,7 @@ function loadBrand() {
 function loadName() {
     let carName = document.getElementById('name');
     let carBrand = document.getElementById('brand').value;
-    // switch (brands) {
-    //     case 'Renault':
-    //         brands.forEach(function(chevrolet) {
-    //             let opt = document.createElement('option');
-    //             opt.value = chevrolet;
-    //             opt.text = chevrolet;
-    //             carName.appendChild(opt);
-    //         });
-    // }
 
-    // brands.forEach(function(modelName) {
-    //     let opt = document.createElement('option');
-    //     opt.value = modelName;
-    //     opt.text = modelName;
-    //     carName.appendChild(opt);
-    // });
     console.log(carBrand);
 }
 
