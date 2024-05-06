@@ -1,4 +1,4 @@
-const { brandModels, brands } = require('./constants/cars');
+const { brands } = require('./constants/cars');
 
 function loadYear() {
     let carYear = document.getElementById('year');
@@ -18,25 +18,17 @@ function loadBrand() {
         let opt = document.createElement('option');
         opt.value = brandName;
         opt.innerHTML = brandName;
-        carBrand.appendChild(opt)
+        carBrand.appendChild(opt);
     });
-}
-
-function loadName() {
-    let carName = document.getElementById('name');
-    let carBrand = document.getElementById('brand').value;
-
-    console.log(carBrand);
 }
 
 function loadFuelType() {
     let carFuel = document.getElementById('fuel_type');
-    fuel_types = [ 'Gasoline', 'Diesel', 'Ethanol' ]
-
-    fuel_types.forEach(function(fuelTypes) {
-        var opt = document.createElement('option')
-        opt.value = fuelTypes;
-        opt.innerHTML = fuelTypes;
+    const fuel_types = ['Gasoline', 'Diesel', 'Ethanol'];
+    fuel_types.forEach(function(fuelType) {
+        var opt = document.createElement('option');
+        opt.value = fuelType;
+        opt.innerHTML = fuelType;
         carFuel.appendChild(opt);
     });
 }
@@ -47,4 +39,7 @@ function loadData() {
     loadFuelType();
 }
 
-setTimeout(loadData, 1000)
+// Chamar loadData após o carregamento do DOM
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(loadData, 1000);
+});
