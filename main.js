@@ -1,4 +1,29 @@
-const { brands } = require('./constants/cars');
+const { brandModels, brands } = require('./constants/cars');
+
+function loadBrand() {
+    let carBrand = document.getElementById('brand');
+    brands.forEach(function(brandName) {
+        let opt = document.createElement('option');
+        opt.value = brandName;
+        opt.innerHTML = brandName;
+        carBrand.appendChild(opt);
+    });
+}
+
+window.loadModels = function(brand = "") {
+    let _brand = brand.toLowerCase();
+    let carModel = document.getElementById('model');
+    carModel.innerHTML = '<option value="" disabled selected>Select your option:</option>';
+    if (brandModels.hasOwnProperty(_brand)) {
+        let models = brandModels[_brand];
+        models.forEach(function(modelName) {
+            let opt = document.createElement('option');
+            opt.value = modelName;
+            opt.innerHTML = modelName;
+            carModel.appendChild(opt);
+        });
+    }
+}
 
 function loadYear() {
     let carYear = document.getElementById('year');
@@ -10,16 +35,6 @@ function loadYear() {
         opt.innerHTML = year;
         carYear.appendChild(opt);
     }
-}
-
-function loadBrand() {
-    let carBrand = document.getElementById('brand');
-    brands.forEach(function(brandName) {
-        let opt = document.createElement('option');
-        opt.value = brandName;
-        opt.innerHTML = brandName;
-        carBrand.appendChild(opt);
-    });
 }
 
 function loadFuelType() {
@@ -34,12 +49,12 @@ function loadFuelType() {
 }
 
 function loadData() {
-    loadYear();
     loadBrand();
+    loadModels();
+    loadYear();
     loadFuelType();
 }
 
-// Chamar loadData após o carregamento do DOM
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(loadData, 1000);
 });

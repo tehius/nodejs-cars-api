@@ -9,12 +9,12 @@
     <div class="container">
         <form>
             <label for="brand">Car brand: </label><br>
-            <select name="brand" id="brand">
+            <select name="brand" id="brand" onchange="loadModels(this.value)">
                 <option value="" disabled selected>Select your option:</option>
             </select><br>
             
-            <label for="name">Car name: </label><br>
-            <select name="name" id="name">
+            <label for="model">Car model: </label><br>
+            <select name="model" id="model">
                 <option value="" disabled selected>Select your option:</option>
             </select><br>
 
