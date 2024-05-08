@@ -2,7 +2,7 @@ const fs = require('fs');
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/users');
+const userRoutes = require('./routes/routes');
 const runDbMigrations = require('./db/migrations/db_migration');
 
 const app = express();
@@ -14,7 +14,7 @@ async function start() {
     await runDbMigrations();
 
     app.listen(port, () => {
-        console.log(`Server running on: http://localhost:${port}`);
+        console.log(`Server running on: http://localhost:${port}/index.html`);
     });
 
     app.use(bodyParser.json());
@@ -29,7 +29,6 @@ async function start() {
                 res.writeHead(200, {'Content-Type':'text/html'});
                 res.write(html);
                 res.end();
-                
             }
         });
     });

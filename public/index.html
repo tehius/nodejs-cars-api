@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nodejs cars api</title>
-    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <title>Basic Car API</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <div class="container">
         <form>
-            <label for="brand">Car brand: </label><br>
+            <label for="brand">Car brand: </label>
             <select name="brand" id="brand" onchange="loadModels(this.value)">
                 <option value="" disabled selected>Select your option:</option>
             </select><br>
             
-            <label for="model">Car model: </label><br>
+            <label for="model">Car model: </label>
             <select name="model" id="model">
                 <option value="" disabled selected>Select your option:</option>
             </select><br>
 
-            <label for="year">Year: </label><br>
+            <label for="year">Year: </label>
             <select name="year" id="year">
                 <option value="" disabled selected>Select your option:</option>
             </select><br>
             
-            <label for="fuel_type">Fuel type: </label><br>
+            <label for="fuel_type">Fuel type: </label>
             <select name="fuel_type" id="fuel_type">
                 <option value="" disabled selected>Select your option:</option>
             </select>
+
             <input type="submit" value="Submit">
+
         </form>
     </div>
     <script src="./dist/bundle.js"></script>
