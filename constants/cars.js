@@ -1,3 +1,7 @@
+const brands = [ 'Renault', 'Fiat', 'Honda', 
+                'Peugeot', 'Chevrolet', 'Hyundai', 
+                'Volkswagen', 'Nissan', 'Toyota' ];
+
 const brandModels = {
     renault: [ 'Clio', 'Kwid', 'Sandero', 'Logan', 'Oroch', 'Duster' ],
     fiat: [ 'Argo', 'Uno', 'Mobi', 'Cronos', 'Palio', 'Toro', ],
@@ -9,8 +13,9 @@ const brandModels = {
     nissan: [ 'March', 'Kicks', 'Leaf', 'Sentra', 'Versa', 'Frontier' ],
     toyota: [ 'Corolla', 'Yaris', 'SW4', 'Hilux', 'Etios', 'Prius' ],
 }
-const brands = [ 'Renault', 'Fiat', 'Honda', 
-                'Peugeot', 'Chevrolet', 'Hyundai', 
-                'Volkswagen', 'Nissan', 'Toyota' ];
 
-module.exports = { brandModels, brands };
+const fuel_types = [ 'Gasoline', 'Alcohol', 'Diesel' ]
+
+const colors = [ 'Black', 'White', 'Grey', 'Red' ]
+
+module.exports = { brands, brandModels, fuel_types, colors };

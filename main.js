@@ -1,4 +1,4 @@
-const { brandModels, brands } = require('./constants/cars');
+const { brands, brandModels, fuel_types, colors } = require('./constants/cars');
 
 function loadBrand() {
     let carBrand = document.getElementById('brand');
@@ -39,7 +39,6 @@ function loadYear() {
 
 function loadFuelType() {
     let carFuel = document.getElementById('fuel_type');
-    const fuel_types = ['Gasoline', 'Diesel', 'Ethanol'];
     fuel_types.forEach(function(fuelType) {
         var opt = document.createElement('option');
         opt.value = fuelType;
@@ -48,11 +47,22 @@ function loadFuelType() {
     });
 }
 
+function loadColor() {
+    let carColor = document.getElementById('color');
+    colors.forEach(function(color) {
+        let opt = document.createElement('option');
+        opt.value = color;
+        opt.innerHTML = color;
+        carColor.appendChild(opt);
+    });
+}
+
 function loadData() {
     loadBrand();
     loadModels();
     loadYear();
     loadFuelType();
+    loadColor();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
