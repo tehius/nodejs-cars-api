@@ -7,15 +7,13 @@ async function runDbMigrations() {
     const client = await db.connect();
 
     try {
-        await client.query('BEGIN'); // begin transaction
+        await client.query('BEGIN');
 
-        await client.query(carSchema); // creating car schema
+        await client.query(carSchema);
 
-        await client.query('COMMIT'); // commit transaction
-
-        console.log('...');
+        await client.query('COMMIT');
     } catch (e) {
-        await client.query('ROLLBACK'); // rollback transaction
+        await client.query('ROLLBACK');
 
         console.log('DB migration failed!');
 
