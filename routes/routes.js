@@ -2,12 +2,12 @@ const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const router = express.Router();
 
-// getting the list of users from the database
+
 router.get('/', (req, res) => {
     res.send();
 })
 
-// adding a user to the database
+
 router.post('/', (req, res) => {
     const user = req.body;
 
@@ -16,7 +16,6 @@ router.post('/', (req, res) => {
     res.send(`${user.first_name} has been added to the Database`);
 })
 
-// finding users within the database by their id value
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     
@@ -25,7 +24,6 @@ router.get('/:id', (req, res) => {
     res.send(foundUser);
 });
 
-// deleting the user from the database
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
   
@@ -34,7 +32,6 @@ router.delete('/:id', (req, res) => {
     res.send(`${id} deleted successfully from database`);
 });
 
-// patching the data of the users, such as first/last name or the email
 router.patch('/:id', (req, res) => {
     const { id } = req.params;
     
@@ -48,6 +45,5 @@ router.patch('/:id', (req, res) => {
 
     res.send(`User with the ${id} has been updated`);
 });
-
 
 module.exports = router;
