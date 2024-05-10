@@ -1,49 +1,51 @@
-const express = require('express');
-const { v4: uuidv4 } = require('uuid');
-const router = express.Router();
+// const express = require('express');
+// const router = express.Router();
 
+// router.get('/brands/:id', (req, res) => {
+//     const { id } = req.params;
+//     res.send();
+// })
 
-router.get('/', (req, res) => {
-    res.send();
-})
+// router.get('/brands', (req, res) => {
+//     res.send();
+// });
 
+// router.post('/', (req, res) => {
+//     const user = req.body;
 
-router.post('/', (req, res) => {
-    const user = req.body;
+//     users.push({ ...user, id: uuidv4() });
 
-    users.push({ ...user, id: uuidv4() });
+//     res.send(`${user.first_name} has been added to the Database`);
+// })
 
-    res.send(`${user.first_name} has been added to the Database`);
-})
-
-router.get('/:id', (req, res) => {
-    const { id } = req.params;
+// router.get('/:id', (req, res) => {
+//     const { id } = req.params;
     
-    const foundUser = users.find((user) => user.id === id);
+//     const foundUser = users.find((user) => user.id === id);
     
-    res.send(foundUser);
-});
+//     res.send(foundUser);
+// });
 
-router.delete('/:id', (req, res) => {
-    const { id } = req.params;
+// router.delete('/:id', (req, res) => {
+//     const { id } = req.params;
   
-    users = users.filter((user) => user.id !== id)
+//     users = users.filter((user) => user.id !== id)
   
-    res.send(`${id} deleted successfully from database`);
-});
+//     res.send(`${id} deleted successfully from database`);
+// });
 
-router.patch('/:id', (req, res) => {
-    const { id } = req.params;
+// router.patch('/:id', (req, res) => {
+//     const { id } = req.params;
     
-    const { first_name, last_name, email } = req.body;
+//     const { first_name, last_name, email } = req.body;
     
-    const user = users.find((user) => user.id === id);
+//     const user = users.find((user) => user.id === id);
     
-    if(first_name) user.first_name = first_name;
-    if(last_name) user.last_name = last_name;
-    if(email) user.email = email;
+//     if(first_name) user.first_name = first_name;
+//     if(last_name) user.last_name = last_name;
+//     if(email) user.email = email;
 
-    res.send(`User with the ${id} has been updated`);
-});
+//     res.send(`User with the ${id} has been updated`);
+// });
 
-module.exports = router;
+// module.exports = router;

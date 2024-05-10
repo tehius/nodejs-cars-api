@@ -68,3 +68,4 @@ function loadData() {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(loadData, 1000);
 });
+

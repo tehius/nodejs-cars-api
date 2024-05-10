@@ -11,6 +11,7 @@ const carSchema = `
         name VARCHAR(255) NOT NULL,
         year INT,
         fuel_type VARCHAR(255) NOT NULL,
+        color VARCHAR(255) NOT NULL,
         brand_id INT REFERENCES cars.brand(id) ON DELETE CASCADE
     );
 `;
